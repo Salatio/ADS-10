@@ -19,7 +19,7 @@ class Tree {
     std::string storage(int y) const;
     explicit Tree(std::vector<char> y) {
         root = new Node;
-        root->value = '\';
+        root->value = '*';
         buildTree(root, y);
         dop(root, "");
     }
@@ -34,7 +34,7 @@ std::string Tree::storage(int y) const {
 }
 void Tree::dop(Node* root, std::string line) {
     if (root->list.size()) {
-        if (root->value != '\') {
+        if (root->value != '*') {
             line = line + root->value;
         }
         for (int i = 0; i < root->list.size(); ++i) {
@@ -48,7 +48,7 @@ void Tree::dop(Node* root, std::string line) {
 
 void Tree::buildTree(Node* root, std::vector<char> y) {
     if (y.size()) {
-        if (root->value != '\') {
+        if (root->value != '*') {
             for (auto i = y.begin(); i != y.end(); ++i) {
                 if (root->value == *i) {
                     y.erase(i);
