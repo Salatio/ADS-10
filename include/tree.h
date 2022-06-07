@@ -17,7 +17,7 @@ class Tree {
 
  public:
     std::string storage(int y) const;
-    Tree(std::vector<char> y) {
+    explicit Tree(std::vector<char> y) {
         root = new Node;
         root->value = '\';
         buildTree(root, y);
